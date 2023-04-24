@@ -1,34 +1,34 @@
 import { gql } from "@apollo/client";
 
 const GET_BLOGS_INFO = gql`
-
-    query{
-        posts{
-            author{
-                name
-                avatar{
-                    url
-                }
-            }
-            title
-            id
-            slug
-            coverPhoto{
-                url
-            }
+  query {
+    posts {
+      author {
+        name
+        avatar {
+          url
         }
+      }
+      title
+      id
+      slug
+      coverPhoto {
+        url
+      }
     }
-
+  }
 `;
 const GET_AUTHORS_INFO = gql`
-    query{
-        authors{
-            id
-            name
-            slug
-            avatar{url}
-        }
-    }   
+  query {
+    authors {
+      id
+      name
+      slug
+      avatar {
+        url
+      }
+    }
+  }
 `;
 
 const GET_AUTHOR_INFO = gql`
@@ -40,7 +40,7 @@ const GET_AUTHOR_INFO = gql`
             description{html}
             posts{
                 coverPhoto{url}
-                id {}
+                id 
                 slug
                 title
             }
@@ -48,30 +48,37 @@ const GET_AUTHOR_INFO = gql`
     }
 `;
 const GET_POST_INFO = gql`
-    query getPostInfo($slug:String!){
-        author{
-            avatar{url}
-            name
-            field
-        }
-        content{
-            html
-        }
-        title
-        coverPhoto{url}
-
+  query getPostInfo($slug: String!) {
+    author {
+      avatar {
+        url
+      }
+      name
+      field
     }
-
+    content {
+      html
+    }
+    title
+    coverPhoto {
+      url
+    }
+  }
 `;
 const GET_COMMENT = gql`
-    query getPostComment($slug:String!){
-        comment(where:{post:{slug:$slug}}){
-            id
-            name
-            email
-        }
+  query getPostComment($slug: String!) {
+    comment(where: { post: { slug: $slug } }) {
+      id
+      name
+      email
     }
-`
+  }
+`;
 
-export {GET_BLOGS_INFO, GET_AUTHOR_INFO, GET_POST_INFO, GET_AUTHOR_INFO}
-
+export {
+  GET_COMMENT,
+  GET_BLOGS_INFO,
+  GET_AUTHORS_INFO,
+  GET_POST_INFO,
+  GET_AUTHOR_INFO,
+};
