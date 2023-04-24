@@ -49,6 +49,7 @@ const GET_AUTHOR_INFO = gql`
 `;
 const GET_POST_INFO = gql`
   query getPostInfo($slug: String!) {
+    post(where : { slug:$slug}){
     author {
       avatar {
         url
@@ -63,6 +64,7 @@ const GET_POST_INFO = gql`
     coverPhoto {
       url
     }
+  }
   }
 `;
 const GET_COMMENT = gql`

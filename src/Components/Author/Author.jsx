@@ -16,8 +16,8 @@ const Author = () => {
       {data.authors.map((author, index) => (
         <React.Fragment key={author.id}>
           <Grid item xs={12} padding={2}>
-            <a
-              href="#"
+            <Link
+              to={`/authors/${author.slug}`}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -29,7 +29,7 @@ const Author = () => {
               <Typography component="p" variant="p" color="#000">
                 {author.name}
               </Typography>
-            </a>
+            </Link>
            </Grid>
           {index !== data.authors.length - 1 && (
             <Grid item xs={12}>
