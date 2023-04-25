@@ -8,6 +8,7 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import sanitizeHtml from 'sanitize-html'
 import CommentForm from "../Comment/CommentForm";
 import Comments from "../Comment/Comments";
+import Loader from "../shared/Loader";
 const BlogPage = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
@@ -15,7 +16,7 @@ const BlogPage = () => {
     variables: { slug },
   });
   console.log({ loading, data, error });
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loader/>;
   if (error) return <h1>Error...</h1>;
   return (
     <Container maxWidth="lg">

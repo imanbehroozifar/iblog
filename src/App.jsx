@@ -6,6 +6,7 @@ import BlogPage from './Components/Blog/BlogPage';
 import AuthorPage from './Components/Author/AuthorPage';
 import BlogsPage from './Components/Blog/BlogsPage';
 import AuthorsPage from './Components/Author/AuthorsPage';
+import ScrollToTop from './Components/shared/ScrollToTop';
 // import { ThemeProvider, createTheme } from "@mui/material";
 // import CssBaseline from "@mui/material/CssBaseline";
 // const darkTheme = createTheme({
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <>
       <Layout>
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/blogs" element={<BlogsPage />} />

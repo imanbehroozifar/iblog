@@ -6,12 +6,13 @@ import { Avatar, Grid, Typography } from "@mui/material";
 import {Container } from '@mui/system'
 import sanitizeHtml from "sanitize-html";
 import CardEL from "../shared/CardEL";
+import Loader from "../shared/Loader";
 const AuthorPage = () => {
   const { slug } = useParams();
   const { loading, data, error } = useQuery(GET_AUTHOR_INFO, {
     variables: { slug },
   });
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loader/>;
   if (error) return <h1>Error...</h1>;
   return (
     <Container maxWidth="lg">

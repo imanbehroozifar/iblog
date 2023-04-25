@@ -1,6 +1,7 @@
 import { AppBar, Button, Container, Toolbar, Typography } from "@mui/material";
 import BookIcon from "@mui/icons-material/Book";
 import React from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <AppBar position="sticky">
@@ -9,11 +10,15 @@ const Header = () => {
           <Typography
             variant="h5"
             component="h1"
-            sx={{ fontWeight:600, flex: 1 }}
+            sx={{ fontWeight: 600, flex: 1 }}
           >
-            IBLOG
+            <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
+              IBLOG
+            </Link>
           </Typography>
-          <BookIcon />
+          <Link to="/" style={{ color: "#fff" }}>
+            <BookIcon />
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>
