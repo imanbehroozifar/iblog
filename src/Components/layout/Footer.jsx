@@ -5,21 +5,27 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 const socialMedia = [
-  <TelegramIcon
-    color="#fff"
-    fontSize="large"
-    sx={{ cursor: "pointer", "&:hover": { color: "#ccc" } }}
-  />,
-  <GitHubIcon
-    color="#fff"
-    fontSize="large"
-    sx={{ cursor: "pointer", "&:hover": { color: "#ccc" } }}
-  />,
-  <InstagramIcon
-    color="#fff"
-    fontSize="large"
-    sx={{ cursor: "pointer", "&:hover": { color: "#ccc" } }}
-  />,
+  <a href="https://t.me/Iman_behroozifar"  style={{color: "#fff"}}>
+    <TelegramIcon
+      color="#fff"
+      fontSize="large"
+      sx={{ cursor: "pointer", "&:hover": { color: "#ccc" } }}
+    />
+  </a>,
+  <a href="https://github.com/imanbehroozifar" style={{color: "#fff"}}>
+    <GitHubIcon
+      color="#fff"
+      fontSize="large"
+      sx={{ cursor: "pointer", "&:hover": { color: "#ccc" } }}
+    />
+  </a>,
+  <a href="https://instagram.com/iman.behroozifar?igshid=ZDdkNTZiNTM=" style={{color: "#fff"}}>
+    <InstagramIcon
+      color="#fff"
+      fontSize="large"
+      sx={{ cursor: "pointer", "&:hover": { color: "#ccc" } }}
+    />
+  </a>,
 ];
 
 const Footer = () => {

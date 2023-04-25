@@ -38,7 +38,7 @@ const CardEL = ({ title, slug, coverPhoto, author }) => {
       <CardContent>
         <Typography
           component="h3"
-          variant="h6"
+          variant="p"
           color="text.primary"
           fontWeight="500"
         >
