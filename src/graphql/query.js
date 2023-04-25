@@ -67,18 +67,19 @@ const GET_POST_INFO = gql`
   }
   }
 `;
-const GET_COMMENT = gql`
-  query getPostComment($slug: String!) {
-    comment(where: { post: { slug: $slug } }) {
-      id
-      name
-      email
-    }
+const GET_POST_COMMENTS = gql`
+query getPostComments($slug:String!) {
+  comments(where: {post: {slug: $slug}}) {
+    id
+    name
+    text
   }
+}
+
 `;
 
 export {
-  GET_COMMENT,
+  GET_POST_COMMENTS,
   GET_BLOGS_INFO,
   GET_AUTHORS_INFO,
   GET_POST_INFO,

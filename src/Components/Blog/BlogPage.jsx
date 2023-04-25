@@ -6,6 +6,8 @@ import { useQuery } from "@apollo/client";
 import { GET_POST_INFO } from "../../graphql/query";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import sanitizeHtml from 'sanitize-html'
+import CommentForm from "../Comment/CommentForm";
+import Comments from "../Comment/Comments";
 const BlogPage = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
@@ -54,6 +56,13 @@ const BlogPage = () => {
               <Grid item xs={12} mt={5}>
                   <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(data.post.content.html) }}></div>
               </Grid>
+              <Grid item xs={12} mt={5}>
+                  <CommentForm slug={slug} />
+        </Grid>
+        <Grid item xs={12} mt={5}>
+                  <Comments slug={slug} />
+              </Grid>
+                  
       </Grid>
     </Container>
   );

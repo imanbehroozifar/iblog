@@ -20,3 +20,4 @@ const SEND_COMMENT = gql`
     }
 
 `
+export {SEND_COMMENT}

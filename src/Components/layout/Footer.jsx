@@ -45,14 +45,14 @@ const Footer = () => {
         >
           <Grid item xs={12}>
             <Grid container spacing={2}>
-              {socialMedia.map((item) => (
+              {socialMedia.map((item,index) => (
                 <Grid
                   item
                   xs={3}
                   sx={{
                     margin: 1,
                   }}
-                >
+                key={index}>
                   {item}
                 </Grid>
               ))}
